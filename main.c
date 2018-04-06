@@ -38,10 +38,15 @@ while (1) {
    if(input(PIN_B6)==0){
       results=(long)input_d()*(long)input_c();
    }
-}
+   if(input(PIN_B7)==0){
+       results=(long)input_d()/(long)input_c();
+   }
+   }
+
        output_a(results);
        output_b(results>>6);
        output_e(results>>10);
+}
 }
    
 
