@@ -4,16 +4,12 @@
 #fuses HS, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, /*NOMCLR,*/ STVREN, NOLVP, NODEBUG
 #use delay(clock=16000000)
-
-#use fast_io(A);
-#use fast_io(B);
-#use fast_io(C);
-#use fast_io(D);
-#use fast_io(E);
-
+#use fast_io(a)
+#use fast_io(b)
+#use fast_io(c)
+#use fast_io(d)
+#use fast_io(e)
 signed long results=0;
-
-
 //#define __DEBUG_SERIAL__ //Si comentas esta linea se deshabilita el debug por serial y el PIN_C6 puede ser usado en forma digital I/O
 
 #ifdef __DEBUG_SERIAL__
@@ -24,24 +20,28 @@ signed long results=0;
 
 void main(void) {
    setup_oscillator(OSC_16MHZ);
-   set_tris_A(0xc0);
-   set_tris_B(0xf0);
-   set_tris_C(0x3f);
-   set_tris_D(0xff);
-   set_tris_E(0x08);
+   set_tris_a(0xc0);
+   set_tris_b(0xf0);
+   set_tris_c(0x3f);
+   set_tris_d(0xff);
+   set_tris_e(0x08);
 #ifdef __DEBUG_SERIAL__ //Deberiamos de proteger nuestras depuraciones de esta forma o usar una macro ya protegida.
    printf("Hola Mundo\n"); //Puedes usar putc o printf. Revisa la documentación de CCS para ver que mas puedes hacer.
 #endif
-   while (true) {
-       if(input(PIN_B4)==0){
-           results=(long)input_d()+)(long)input_c();
-       }
-       if(input(PIN_B5)==0){
-           results=(long)input_d()-(long)input_c();
-       }
-       output_A(results);
-       output_B(results>>6);
-       output_E_(results>>10);
-       }
+while (1) {
+   if(input(PIN_B4)==0){
+      results=(long)input_d()+(long)input_c();
    }
+   if(input(PIN_B5)==0){
+      results=(long)input_d()-(long)input_c();
+   }
+   if(input(PIN_B6)==0){
+      results=(long)input_d()*(long)input_c();
+   }
+}
+       output_a(results);
+       output_b(results>>6);
+       output_e(results>>10);
+}
+   
 
