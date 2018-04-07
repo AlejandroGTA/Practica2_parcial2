@@ -28,21 +28,32 @@ void main(void) {
 #ifdef __DEBUG_SERIAL__ //Deberiamos de proteger nuestras depuraciones de esta forma o usar una macro ya protegida.
    printf("Hola Mundo\n"); //Puedes usar putc o printf. Revisa la documentación de CCS para ver que mas puedes hacer.
 #endif
+   int selection=0;
 while (1) {
    if(input(PIN_B4)==0){
-      results=(long)input_d()+(long)input_c();
-   }
+      selection=1;
+   } 
    if(input(PIN_B5)==0){
-      results=(long)input_d()-(long)input_c();
+      selection=2;
    }
    if(input(PIN_B6)==0){
-      results=(long)input_d()*(long)input_c();
+      selection=3;
    }
    if(input(PIN_B7)==0){
-       results=(long)input_d()/(long)input_c();
+      selection=4;
+   }    
+   if(input(PIN_B4)==1 && selection==1){
+      results=(long)input_d()+(long)input_c();
    }
+   if(input(PIN_B5)==1 && selection==2){
+      results=(long)input_d()-(long)input_c();
    }
-
+   if(input(PIN_B6)==1 && selection==3){
+      results=(long)input_d()*(long)input_c();
+   }
+   if(input(PIN_B7)==1 && selection==4){
+      results=(long)input_d()/(long)input_c();
+   }
        output_a(results);
        output_b(results>>6);
        output_e(results>>10);
