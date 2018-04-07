@@ -17,7 +17,7 @@ signed long results=0;
 #use RS232(BAUD=9600, XMIT=TX_232, BITS=8,PARITY=N, STOP=1)
 #use fast_io(c)
 #endif
-
+void rebound(void);
 void main(void) {
    setup_oscillator(OSC_16MHZ);
    set_tris_a(0xc0);
@@ -52,12 +52,34 @@ while (1) {
       results=(long)input_d()*(long)input_c();
    }
    if(input(PIN_B7)==1 && selection==4){
-      results=(long)input_d()/(long)input_c();
+       if(input_c()!=0){
+          results=(long)input_d()/(long)input_c();
+       }
+       else{
+           rebound();
+       }
+       }
    }
        output_a(results);
        output_b(results>>6);
        output_e(results>>10);
 }
-}
+
    
+void rebound(){
+   long Error = 0x0;
+   for(int repetidor = 1; repetidor < 5; repetidor++){
+      Error = 0x1fff;
+      output_a(Error);
+      output_b(Error>>6);
+      output_e(Error>>10);
+      delay_ms(500);
+      Error = 0x0;
+      output_a(Error);
+      output_b(Error>>6);
+      output_e(Error>>10);
+      delay_ms(500);
+   }
+}    
+
 
