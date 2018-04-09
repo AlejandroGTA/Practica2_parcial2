@@ -49,6 +49,7 @@ while (1) {
    if(input(PIN_B5)==1 && selection==2){
       if(input_c()<input_d()){
          results=(long)input_c()-(long)input_d();
+         results=(~results)+1;
          selection=0;
       }
       else{
