@@ -44,41 +44,46 @@ while (1) {
    }    
    if(input(PIN_B4)==1 && selection==1){
       results=(long)input_d()+(long)input_c();
+      selection=0;
    }
    if(input(PIN_B5)==1 && selection==2){
       results=(long)input_d()-(long)input_c();
+      selection=0;
    }
    if(input(PIN_B6)==1 && selection==3){
       results=(long)input_d()*(long)input_c();
+      selection=0;
    }
    if(input(PIN_B7)==1 && selection==4){
        if(input_c()!=0){
           results=(long)input_d()/(long)input_c();
+          selection=0;
        }
        else{
            rebound();
        }
-       }
-   }
-       output_a(results);
-       output_b(results>>6);
-       output_e(results>>10);
+    }
+   output_a(results);
+   output_b(results>>6);
+   output_e(results>>10);
+   
+}
 }
 
    
-void rebound(){
+void rebound(void){
    long Error = 0x0;
-   for(int repetidor = 1; repetidor < 5; repetidor++){
+   for(int repeater = 1; repeater < 5; repeater++){
       Error = 0x1fff;
       output_a(Error);
       output_b(Error>>6);
       output_e(Error>>10);
-      delay_ms(500);
+      delay_ms(250);
       Error = 0x0;
       output_a(Error);
       output_b(Error>>6);
       output_e(Error>>10);
-      delay_ms(500);
+      delay_ms(250);
    }
 }    
 
