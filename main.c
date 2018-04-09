@@ -43,20 +43,27 @@ while (1) {
       selection=4;
    }    
    if(input(PIN_B4)==1 && selection==1){
-      results=(long)input_d()+(long)input_c();
+      results=(long)input_c()+(long)input_d();
       selection=0;
    }
    if(input(PIN_B5)==1 && selection==2){
-      results=(long)input_d()-(long)input_c();
-      selection=0;
-   }
+      if(input_c()<input_d()){
+         results=(long)input_c()-(long)input_d();
+         selection=0;
+      }
+      else{
+         results=(long)input_c()-(long)input_d();
+         selection=0;
+      }
+    }
+   
    if(input(PIN_B6)==1 && selection==3){
-      results=(long)input_d()*(long)input_c();
+      results=(long)input_c()*(long)input_d();
       selection=0;
    }
    if(input(PIN_B7)==1 && selection==4){
-       if(input_c()!=0){
-          results=(long)input_d()/(long)input_c();
+       if(input_d()!=0){
+          results=(long)input_c()/(long)input_d();
           selection=0;
        }
        else{
