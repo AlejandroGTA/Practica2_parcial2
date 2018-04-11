@@ -1,0 +1,16 @@
+[PROJECT]
+Target=build\default\debug\_ext\1472\main.hex
+Processor_Text=PIC18F4620
+CCSVersion=5.012
+Compiler=PCH
+[Target Data]
+FileList=build\default\debug\_ext\1472\main.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\
+[build\default\debug\_ext\1472\main.c]
+Type=4
+[mru-list]
+1=build\default\debug\_ext\1472\main.c
+[Units]
+Count=1
+1=..\main (main)
