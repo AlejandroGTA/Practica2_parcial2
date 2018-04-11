@@ -98,11 +98,11 @@ ${OBJECTDIR}/_ext/1472/main.o: ../main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} ${OBJECTDIR}/_ext/1472 
 ifeq (1,1) 
 	${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC}  out="${OBJECTDIR}\_ext\1472"  ../main.c +FH +DF +CC  #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +EA +Z -P #__18F4520=1 
+	${MP_CC}  out="${OBJECTDIR}\_ext\1472"  ../main.c +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +EA +Z -P #__18F4520=1 
 	@mv ${OBJECTDIR}/_ext/1472/main.cof "dist/${CND_CONF}/${IMAGE_TYPE}/CalculadoraB_sica.X.${IMAGE_TYPE}.cof" 
 	@mv ${OBJECTDIR}/_ext/1472/main.hex "dist/${CND_CONF}/${IMAGE_TYPE}/CalculadoraB_sica.X.${IMAGE_TYPE}.hex"
 else 
-	${MP_CC}  out=""${OBJECTDIR}\_ext\1472"" ../main.c +EXPORT +FH +DF +CC  #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +EA +Z -P #__18F4520=1 +EXPORTD="${OBJECTDIR}/_ext/1472"  
+	${MP_CC}  out=""${OBJECTDIR}\_ext\1472"" ../main.c +EXPORT +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +EA +Z -P #__18F4520=1 +EXPORTD="${OBJECTDIR}/_ext/1472"  
 	
 endif 
 	

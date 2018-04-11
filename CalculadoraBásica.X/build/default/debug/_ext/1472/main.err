@@ -1,0 +1,8 @@
+C:\Users\Mon Villaseñor\Documents\GitHub\practica2_parcial2\main.c:27:5:  Warning#202  Variable never used:   DataOne
+C:\Users\Mon Villaseñor\Documents\GitHub\practica2_parcial2\main.c:28:5:  Warning#202  Variable never used:   DataTwo
+C:\Users\Mon Villaseñor\Documents\GitHub\practica2_parcial2\main.c:29:5:  Warning#202  Variable never used:   Operation
+C:\Users\Mon Villaseñor\Documents\GitHub\practica2_parcial2\main.c:30:5:  Warning#202  Variable never used:   NumberOne
+C:\Users\Mon Villaseñor\Documents\GitHub\practica2_parcial2\main.c:31:5:  Warning#202  Variable never used:   NumbreTwo
+      Memory usage:   ROM=1%      RAM=0% - 1%
+      0 Errors,  5 Warnings.
+Build Successful.
